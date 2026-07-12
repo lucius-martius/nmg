@@ -1,2 +1,5 @@
+# Copyright © 2015 by Simon Wendsche
+# SPDX-License-Identifier: GPL-3.0-only
+
 build/*
 
