@@ -1,0 +1,107 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "environment": {
+                "CXXFLAGS" : "$penv{CXXFLAGS} -Wall -Wextra -Wno-unused-local-typedefs -Wno-missing-field-initializers"
+            }
+        },
+        {
+            "name": "clang",
+            "hidden": true,
+            "environment": {
+                "CC" : "clang",
+                "CXX" : "clang++"
+            }
+        },
+        {
+            "name": "gcc",
+            "hidden": true
+        },
+        {
+            "name": "debug-base",
+            "inherits": [ "default" ],
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "environment": {
+                "CXXFLAGS" : "$penv{CXXFLAGS} -O2 -g -fno-omit-frame-pointer -fstack-protector-strong"
+            }
+        },
+        {
+            "name": "release-base",
+            "inherits": [ "default" ],
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
+            "name": "debug-clang",
+            "inherits": [ "debug-base", "clang" ]
+        },
+        {
+            "name": "release-clang",
+            "inherits": [ "release-base", "clang" ]
+        },
+        {
+            "name": "debug-gcc",
+            "inherits": [ "debug-base", "gcc" ],
+            "environment": {
+                "CXXFLAGS" : "$penv{CXXFLAGS} -Wno-interference-size"
+            }
+        },
+        {
+            "name": "release-gcc",
+            "inherits": [ "release-base", "gcc" ],
+            "environment": {
+                "CXXFLAGS" : "$penv{CXXFLAGS} -Wno-interference-size"
+            }
+        },
+        {
+            "name": "debug",
+            "inherits": [ "debug-gcc" ]
+        },
+        {
+            "name": "release",
+            "inherits": [ "release-gcc" ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "hidden": true
+        },
+        {
+            "name": "debug",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "release",
+            "configurePreset": "release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "output": {"outputOnFailure": true},
+            "execution": {"noTestsAction": "error", "stopOnFailure": true}
+        },
+        {
+            "name": "debug",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "release",
+            "configurePreset": "release"
+        }
+    ]
+}

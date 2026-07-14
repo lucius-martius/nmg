@@ -1,0 +1,14 @@
+* NormalmapGenerator
+This is a fork of the NormalmapGenerator GUI application. The Qt GUI was replaced with a simple CLI that allows the same option but convenient usage in batch scripts.
+
+This was mostly done to automate certain tasks in Morrowind modding. Some future functions might be added that serve no other purpose than to make this application more useful for that purpose.
+* Todo
++ [ ] Validate the parameters given on the command-line
++ [ ] Remove remaining dependencies on Qt types.
++ [ ] Integrate conversion from and to DDS using imagemagick.
+
+* Usage
+See =nmg --help=.
+
+* Installation
+Compile it like any other CMake project. Other than Qt (until it is removed) there are no other dependencies. This might require a C++26 compatible compiler.

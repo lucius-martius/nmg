@@ -1,0 +1,50 @@
+# Copyright © 2026 Lucius Martius
+# SPDX-License-Identifier: GPL-3.0-only
+---
+BasedOnStyle: LLVM
+AlignEscapedNewlines: LeftWithLastLine
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLoopsOnASingleLine: true
+BinPackParameters: OnePerLine
+BreakAfterAttributes: Never
+BreakBeforeTemplateCloser: true
+BreakTemplateDeclarations: Yes
+ColumnLimit: 96
+ConstructorInitializerIndentWidth: 1
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: ^"
+    Priority: 1
+    CaseSensitive: false
+  - Regex: ^<[a-z_]+>
+    Priority: 2
+    CaseSensitive: false
+  - Regex: ^<.+\.h>
+    Priority: 3
+    CaseSensitive: false
+  - Regex: ^<boost/
+    Priority: 4
+    CaseSensitive: false
+  - Regex: ^<martius/
+    Priority: 5
+    CaseSensitive: false
+IndentCaseLabels: true
+IndentWidth: 4
+InsertNewlineAtEOF: true
+LambdaBodyIndentation: OuterScope
+OneLineFormatOffRegex: ^(TEST_CASE_TEMPLATE)$
+PenaltyBreakAssignment: 500000
+PenaltyBreakBeforeFirstCallParameter: 75
+PenaltyBreakOpenParenthesis: 5000
+PenaltyBreakScopeResolution: 1000000000
+PenaltyExcessCharacter: 100000
+PenaltyReturnTypeOnItsOwnLine: 6000
+PointerAlignment: Middle
+QualifierAlignment: Left
+SpaceAfterTemplateKeyword: false
+TabWidth: 4
+BreakConstructorInitializers: AfterColon

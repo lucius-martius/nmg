@@ -1,0 +1,11 @@
+# Copyright © 2026 Lucius Martius
+# SPDX-License-Identifier: GPL-3.0-only
+CompileFlags:
+  Compiler: gcc
+  BuiltinHeaders: QueryDriver
+  Remove:
+    - -mno-direct-extern-access
+    - -fmodules-ts
+    - -fmodule-ts
+    - -fdeps-format=*
+    - -fmodule-mapper=*
