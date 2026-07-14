@@ -5,6 +5,8 @@
 #define SOBEL_H
 
 #include <QImage>
+#include <QVector3D>
+
 #include "intensitymap.h"
 
 class NormalmapGenerator

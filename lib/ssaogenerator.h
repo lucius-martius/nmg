@@ -4,8 +4,8 @@
 #ifndef SSAOGENERATOR_H
 #define SSAOGENERATOR_H
 
-#include "intensitymap.h"
 #include <QImage>
+#include <QVector3D>
 
 //code is based on http://john-chapman-graphics.blogspot.de/2013/01/ssao-tutorial.html
 class SsaoGenerator
